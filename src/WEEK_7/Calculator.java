@@ -18,10 +18,10 @@ public class Calculator {
     }
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        System.out.println(calculator.sum(10,20));
-        System.out.println(calculator.sum(10.0,20.0));
-        System.out.println(calculator.multiplication(10,20));
-        System.out.println(calculator.multiplication(10.0,20.0));
-        System.out.println(calculator.multiplication(10.0,20.0,30.0));
+        System.out.println("result: "+calculator.sum(10,20));
+        System.out.println("result: "+calculator.sum(10.0,20.0));
+        System.out.println("result: "+calculator.multiplication(10,20));
+        System.out.println("result: "+calculator.multiplication(10.0,20.0));
+        System.out.println("result: "+calculator.multiplication(10.0,20.0,30.0));
     }
 }

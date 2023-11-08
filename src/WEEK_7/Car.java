@@ -16,9 +16,10 @@ public class Car {
 
     public static void main(String[] args) {
         Car car1 = new Car("Renault","Clio",2023);
+        System.out.println("counter: "+counter);
         Car car2 = new Car("BMW","M5",2023);
+        System.out.println("counter: "+counter);
         Car car3 = new Car("Mercedes","S500",2023);
-
-        System.out.println(counter);
+        System.out.println("counter: "+counter);
     }
 }
