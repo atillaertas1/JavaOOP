@@ -1,37 +1,50 @@
 package WEEK_8;
 
-class Student {
-    String name;
-    String surname;
-    byte[] notes;
-
-    public Student(String name, String surname, byte[] notes){
-        this.name = name;
-        this.surname = surname;
-        this.notes = notes;
-    }
-
-    public void printStudentInfo(){
-        System.out.println("Name: " + name);
-        System.out.println("Surname: " + surname);
-        System.out.println("Notes: ");
-        for (byte note : notes){
-            System.out.print(note + " - ");
-        }
-        System.out.println();
-        System.out.println("----------------------------------");
-    }
-}
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Student student_1 = new Student("Atilla","Ertas",new byte[]{50,60,70});
-        Student student_2 = new Student("Ahmet", "Yılmaz",new byte[]{60,90,100});
+        ArrayList<Book> books = createBooks();
+        listBooks(books);
+        listBooksPublishedAfter(books,2010);
+        listBooksByAuthor(books,"Author 1");
+    }
+    public static ArrayList<Book> createBooks(){
+        ArrayList<Book> books = new ArrayList<>();
+        books.add(new Book("Book 1","Author 1",2023));
+        books.add(new Book("Book 2","Author 2",2020));
+        books.add(new Book("Book 3","Author 3",2005));
+        return books;
+    }
 
-        Student[] students = {student_1, student_2};
-
-        for (Student student : students){
-            student.printStudentInfo();
+    public static void listBooks(ArrayList<Book> books){
+        System.out.println("ALL BOOKS");
+        for (Book book : books){
+            printBookDetails(book);
         }
     }
+    public static void listBooksPublishedAfter(ArrayList<Book> books,int year){
+        System.out.println("BOOKS PUBLISHED AFTER A CERTAIN YEAR");
+        for (Book book : books){
+            printBookDetails(book);
+        }
+    }
+
+    public static void listBooksByAuthor(ArrayList<Book> books,String author){
+        System.out.println("BOOKS BY SPECIFIC AUTHOR");
+        for (Book book : books){
+            if (book.author.equals(author)){
+                printBookDetails(book);
+            }
+        }
+    }
+
+    public static void printBookDetails(Book book){
+        System.out.println("-----------------------------------");
+        System.out.println("Book name: " + book.bookName);
+        System.out.println("Author: " + book.author);
+        System.out.println("Publication Year: " + book.publicationYear);
+        System.out.println("-----------------------------------");
+    }
 }
+
