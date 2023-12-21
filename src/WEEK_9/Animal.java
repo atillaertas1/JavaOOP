@@ -1,6 +1,6 @@
 package WEEK_9;
 
-public class Animal {
+public abstract class Animal {
     public String species;
     public void makeSound(){};
 
@@ -8,6 +8,7 @@ public class Animal {
         Bird bird = new Bird();
         bird.makeSound();
     }
+
 }
 
  class Bird extends Animal{

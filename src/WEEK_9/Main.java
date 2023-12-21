@@ -25,7 +25,7 @@ abstract class Player {
     private final int matchesPlayed;
     private final int age;
 
-    protected Player (String name,String position,int matchesPlayed,int age){
+    public Player (String name,String position,int matchesPlayed,int age){
         this.name = name;
         this.position = position;
         this.matchesPlayed = matchesPlayed;
